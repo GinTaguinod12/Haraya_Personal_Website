@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hezekiah A. Magalona — Student & future professional. Personal portfolio.">
+  <title>Hezekiah · Cosmic Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= LOADING SCREEN (GREEN → YELLOW CROSSFADE) ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+
+    <!-- Green Layer (starting theme — from team page) -->
+    <div class="loader-layer loader-layer-green">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Loading the cosmos...</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yellow Layer (target theme — Hezekiah's page) -->
+    <div class="loader-layer loader-layer-yellow">
+      <div class="loader-content">
+        <div class="loader-planet">
+          <div class="loader-ring"></div>
+          <div class="loader-ring"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <p class="loader-text">Welcome to my portfolio</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= CURSOR TRAIL CANVAS ================= -->
+  <canvas class="cursor-trail" id="cursorTrail" aria-hidden="true"></canvas>
+
+  <!-- ================= SCROLL PROGRESS BAR ================= -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-fill"></div>
+  </div>
+
+  <!-- ================= COSMIC BACKGROUND ================= -->
+  <div class="cosmic-bg" aria-hidden="true">
+    <div class="starfield starfield-far"></div>
+    <div class="starfield starfield-near"></div>
+
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <svg class="constellation" viewBox="0 0 1000 800" preserveAspectRatio="none">
+      <line x1="150" y1="120" x2="280" y2="220" />
+      <line x1="280" y1="220" x2="420" y2="160" />
+      <line x1="420" y1="160" x2="540" y2="280" />
+      <line x1="540" y1="280" x2="700" y2="220" />
+      <line x1="700" y1="220" x2="850" y2="320" />
+      <line x1="280" y1="220" x2="340" y2="380" />
+      <line x1="340" y1="380" x2="200" y2="520" />
+      <line x1="340" y1="380" x2="540" y2="480" />
+      <line x1="540" y1="480" x2="720" y2="520" />
+      <line x1="720" y1="520" x2="860" y2="620" />
+    </svg>
+
+    <span class="constellation-node" style="top: 15%; left: 15%;"></span>
+    <span class="constellation-node" style="top: 27%; left: 28%;"></span>
+    <span class="constellation-node" style="top: 20%; left: 42%;"></span>
+    <span class="constellation-node" style="top: 35%; left: 54%;"></span>
+    <span class="constellation-node" style="top: 27%; left: 70%;"></span>
+    <span class="constellation-node" style="top: 40%; left: 85%;"></span>
+    <span class="constellation-node" style="top: 47%; left: 34%;"></span>
+    <span class="constellation-node" style="top: 65%; left: 20%;"></span>
+    <span class="constellation-node" style="top: 60%; left: 54%;"></span>
+    <span class="constellation-node" style="top: 65%; left: 72%;"></span>
+    <span class="constellation-node" style="top: 77%; left: 86%;"></span>
+
+    <span class="cosmic-dust dust-1"></span>
+    <span class="cosmic-dust dust-2"></span>
+    <span class="cosmic-dust dust-3"></span>
+    <span class="cosmic-dust dust-4"></span>
+    <span class="cosmic-dust dust-5"></span>
+    <span class="cosmic-dust dust-6"></span>
+    <span class="cosmic-dust dust-7"></span>
+    <span class="cosmic-dust dust-8"></span>
+
+    <div class="shooting-star shooting-1"></div>
+    <div class="shooting-star shooting-2"></div>
+    <div class="shooting-star shooting-3"></div>
+
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+  </div>
+
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <a href="../index.html" class="logo">H<span>.</span></a>
+    <nav>
+      <a href="#home" data-section="home">Home</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#education" data-section="education">Education</a>
+      <a href="#skills" data-section="skills">Skills</a>
+      <a href="#interests" data-section="interests">Interests</a>
+      <a href="#experience" data-section="experience">Experience</a>
+      <a href="#projects" data-section="projects">Projects</a>
+      <a href="#contact" data-section="contact">Contact</a>
+    </nav>
+    <a href="../index.html" class="back-button">← Team</a>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="eyebrow reveal reveal-delay-1">personal portfolio</p>
+      <h1 class="reveal reveal-delay-2">Hi, I'm <span class="gradient-text">Hezekiah.</span></h1>
+      <h2 class="reveal reveal-delay-3">Student &amp; future professional</h2>
+      <p class="intro reveal reveal-delay-4">
+        Welcome to my personal space — get to know a little more about me, from my background and interests to the projects I’ve worked on and the things I enjoy creating.
+      </p>
+      <div class="hero-buttons reveal reveal-delay-5">
+        <a href="#about" class="cssbuttons-io">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Discover More</span>
+        </a>
+        <a href="#contact" class="secondary-button">Contact me</a>
+      </div>
+
+      <a href="#about" class="scroll-indicator reveal reveal-delay-6" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </div>
+
+    <div class="hero-image reveal reveal-delay-3">
+      <div class="cosmic-glow" aria-hidden="true"></div>
+
+      <div class="image-orbit orbit-1"></div>
+      <div class="image-orbit orbit-2"></div>
+
+      <div class="orbit-star star-1" aria-hidden="true"></div>
+      <div class="orbit-star star-2" aria-hidden="true"></div>
+      <div class="orbit-star star-3" aria-hidden="true"></div>
+
+      <div class="image-circle">
+        <img src="../images/Hezekiah/Hezekiah.png" alt="Hezekiah A. Magalona">
+      </div>
+
+      <div class="floating-card">
+        <span>02</span>
+        <p>Hezekiah A. Magalona</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="about">
+    <div class="section-heading">
+      <p class="eyebrow">01 — about me</p>
+      <h2>Get to know Hezekiah</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hello, I’m Hezekiah! I’m an Information Technology student specializing in Multimedia Arts and Animation. 
+          Through my studies, I’ve explored different areas of technology and multimedia, from technical projects to creative work.
+        </p>
+        <p>
+          Outside of school, I spend a lot of my time making things. I’m interested in different forms of art, including digital work, 
+          drawing, crafts, and other things I can make by hand. I also do volunteer work and enjoy being involved in different activities and projects.
+        </p>
+        <p>
+          This personal portfolio showcases my background, skills,
+          hobbies, interests, and projects. It represents who I am as
+          a student and what I hope to achieve in the future.
+        </p>
+
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-number" data-target="2" data-suffix="+">0</div>
+            <div class="stat-label">Years Coding</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="10" data-suffix="+">0</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="5" data-suffix="">0</div>
+            <div class="stat-label">Tech Learned</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="100" data-suffix="%">0</div>
+            <div class="stat-label">Dedication</div>
+          </div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-item">
+          <span>Name</span>
+          <strong>Hezekiah A. Magalona</strong>
+        </div>
+        <div class="info-item">
+          <span>Occupation</span>
+          <strong>Student</strong>
+        </div>
+        <div class="info-item">
+          <span>Field</span>
+          <strong>Information Technology</strong>
+        </div>
+        <div class="info-item">
+          <span>Location</span>
+          <strong>Cavite, Philippines</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education" class="education">
+    <div class="section-heading">
+      <p class="eyebrow">02 — education</p>
+      <h2>My educational journey</h2>
+    </div>
+
+    <div class="timeline">
+
+      <a
+        href="https://www.google.com/maps/place/National+University-Manila/@14.6043164,120.918411,13z/data=!4m10!1m2!2m1!1sNational+University+Manila!3m6!1s0x3397c9fc11a6ceb3:0x9d4220dade0140ab!8m2!3d14.6043164!4d120.9946287!15sChpOYXRpb25hbCBVbml2ZXJzaXR5IE1hbmlsYVocIhpuYXRpb25hbCB1bml2ZXJzaXR5IG1hbmlsYZIBEnByaXZhdGVfdW5pdmVyc2l0eZoBI0NoWkRTVUhOTUc5blMwVkpRMEZuU1VSU2IzVjFNRTVSRUFF4AEA-gEECAAQTA!16zL20vMDc4bjhi?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="timeline-item"
+      >
+        <div class="timeline-number">01</div>
+        <div class="timeline-content">
+          <span class="timeline-badge">Present</span>
+          <h3>National University - Manila</h3>
+          <p>BS Information Technology with specialization in Web and Mobile Applications.</p>
+          <span class="timeline-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a 
+      href="https://www.google.com/maps/place/Angelo+L.+Loyola+Senior+High+School/@14.297698,121.0445458,988m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397d7826bd896e5:0xc4f1af0d6822a5cc!8m2!3d14.2976929!4d121.0494114!16s%2Fg%2F11g0sqnt39?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="timeline-item"
+      >
+
+        <div class="timeline-number">02</div>
+        <div class="timeline-content">
+          <span class="timeline-badge">Previous</span>
+          <h3>Angelo L. Loyola Senior High School</h3>
+          <p>Senior High School - Humanities and Social Sciences.</p>
+          <span class="timeline-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a 
+      href="https://www.google.com/maps/place/Eusebio+High+School/@14.588848,121.0858403,986m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397c7fa30dac3c7:0x5e2700ab066add8d!8m2!3d14.588848!4d121.0884152!16s%2Fg%2F1tfwmh3w?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="timeline-item"
+      >
+
+        <div class="timeline-number">03</div>
+        <div class="timeline-content">
+          <span class="timeline-badge">Previous</span>
+          <h3>Eusebio High School</h3>
+          <p>Junior High School</p>
+          <span class="timeline-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a 
+      href="https://www.google.com/maps/place/ROSARIO+ELEMENTARY+SCHOOL/@14.5866045,121.0838646,1144m/data=!3m1!1e3!4m6!3m5!1s0x3397c7002ec36c8b:0x564516906691961c!8m2!3d14.585236!4d121.0842933!16s%2Fg%2F11lf6bm2tk?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="timeline-item"
+      >
+
+        <div class="timeline-number">04</div>
+        <div class="timeline-content">
+          <span class="timeline-badge">Previous</span>
+          <h3>Rosario Elementary School</h3>
+          <p>Kinder to Grade School</p>
+          <span class="timeline-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="skills">
+    <div class="section-heading">
+      <p class="eyebrow">03 — my skills</p>
+      <h2>What I can do</h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-card" style="--level: 80%;">
+        <span>01</span>
+        <h3>Web Development</h3>
+        <p>Creating basic websites using HTML, CSS, and JavaScript, with a focus on structure, layout, and usability.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">85%</small>
+      </div>
+
+      <div class="skill-card" style="--level: 75%;">
+        <span>02</span>
+        <h3>Programming</h3>
+        <p>Working with Java and JavaScript to build basic applications and practice programming concepts.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">75%</small>
+      </div>
+
+      <div class="skill-card" style="--level: 80%;">
+        <span>03</span>
+        <h3>Database</h3>
+        <p>Working with SQL and NoSQL databases, creating tables, managaging data, and understanding database relationships.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">70%</small>
+      </div>
+
+      <div class="skill-card" style="--level: 88%;">
+        <span>04</span>
+        <h3>Creative Work</h3>
+        <p>CCreating layouts, illustrations, digital artwork, crafts, and other visual projects across different mediums.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">88%</small>
+      </div>
+
+      <div class="skill-card" style="--level: 85%;">
+        <span>05</span>
+        <h3>Flexibility</h3>
+        <p>Adapting to different tasks, situations, and working styles while staying open to new approaches.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">85%</small>
+      </div>
+      
+      <div class="skill-card" style="--level: 90%;">
+        <span>06</span>
+        <h3>Resourcefulness</h3>
+        <p>Finding practical ways to solve problems and make the most of the tools and resources available.</p>
+        <div class="progress"><div class="progress-fill"></div></div>
+        <small class="progress-label">85%</small>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= HOBBIES / INTERESTS ================= -->
+  <section id="interests" class="interests">
+    <div class="section-heading">
+      <p class="eyebrow">04 — my interests</p>
+      <h2>Things I enjoy</h2>
+    </div>
+    <div class="hobbies-grid">
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.music.png" alt="Music">
+        </div>
+        <h3>Music</h3>
+        <p>Songs I keep coming back to.</p>
+      </div>
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.film.png" alt="Film">
+        </div>
+        <h3>Film</h3>
+        <p>Creative stories and visuals.</p>
+      </div>
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.cam.png" alt="Photography">
+        </div>
+        <h3>Photography</h3>
+        <p>Capturing moments, places, and details.</p>
+      </div>
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.des.png" alt="Design">
+        </div>
+        <h3>Design</h3>
+        <p>Layouts, type, and visuals.</p>
+      </div>
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.art.png" alt="Sketching">
+        </div>
+        <h3>Sketching</h3>
+        <p>Putting ideas on paper.</p>
+      </div>
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.cra.png" alt="Crafts">
+        </div>
+        <h3>Crafts</h3>
+        <p>Making things by hand.</p>
+      </div>
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.inst.png" alt="Instruments">
+        </div>
+        <h3>Instruments</h3>
+        <p>Learning songs in my own time.</p>
+      </div>
+      <div class="hobby">
+        <div class="hobby-icon">
+          <img src="../images/Hezekiah/h.vol.png" alt="Volunteering">
+        </div>
+        <h3>Volunteering</h3>
+        <p>Helping out and getting involved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Experiences ================= -->
+  <section id="experience" class="experience"> 
+    <div class="section-heading">
+      <p class="eyebrow">05 — Experience & Involvement</p>
+      <h2>Beyond the Classroom</h2>
+    </div>
+
+    <div class="skill-card">
+      <span>2026-Present</span>
+      <h3>Public Information Officer, YDOL</h3>
+      <p>Involved in youth leadership activities and information-related initiatives in City of Carmona.</p>
+    </div> <br>
+    
+    <div class="skill-card">
+      <span>2026-Present</span>
+      <h3>Volunteer, Project LAPIS - Carmona</h3>
+      <p>Supports learning activities and assists learners through the Learning Assistance Program and Inclusive Support.</p>
+    </div> <br>
+    
+    <div class="skill-card">
+      <span>2023-2024</span>
+      <h3>Academic Committee, POLARISS</h3>
+      <p>Assisted in coordinating academic, arts, recreation, and social science programs.</p>
+    </div> <br>
+    
+    <div class="skill-card">
+      <span>2023-2024</span>
+      <h3>Finance Committee, SSLG</h3>
+      <p>Assisted with financial responsibilities and school activities.</p>
+    </div> <br>
+    
+    <div class="skill-card">
+      <span>2022-2024</span>
+      <h3>Master Layout — Filipino, Ang/The Sentinel</h3>
+      <p>Managed the page layout and visual design of the Filipino section.</p>
+    </div>
+  
+  </section>
+
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="projects">
+    <div class="section-heading">
+      <p class="eyebrow">06 — projects</p>
+      <h2>My works</h2>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div>
+          <div class="project-number">01</div>
+          <span>Desktop Application</span>
+          <img src="../images/Hezekiah/ifc.png" alt="Book Database" class="project-image">
+          <h3>IFC Crafts</h3>
+          <p>A desktop system designed to organize customer, product, order, payment, shipment, inventory, and affiliate records in one centralized database.</p>
+        </div>
+        <a href="https://github.com/hzkiahm/IFC-Crafts.git" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+      </article>
+
+      <article class="project-card">
+        <div>
+          <div class="project-number">02</div>
+          <span>Mobile Application</span>
+          <img src="../images/Hezekiah/umi.png" alt="Mobile Application" class="project-image">
+          <h3>umi</h3>
+          <p>An emotional awareness app that helps users explore and reflect on their feelings through daily mood tracking, inspiration, emotional patterns, and personal journaling.</p>
+        </div>
+        <a href="https://drive.google.com/file/d/1KIxfaR0kStjCvW9yR7LClRoLEs0H3lOV/view?usp=sharing" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+      </article>
+
+    <article class="project-card">
+      <div>
+        <div class="project-number">03</div>
+        <span>Personal Website</span>
+        <img src="../images/Hezekiah/personal.png" alt="Personal Website" class="project-image">
+        <h3>Personal Website</h3>
+        <p>A personal portfolio website showcasing my background, skills, projects, interests, organizations, and certificates.</p>
+      </div>
+      <a href="https://github.com/hzkiahm/Magalona_Website" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+    </article>
+
+  <article class="project-card">
+    <div>
+      <div class="project-number">04</div>
+      <span>Desktop Application</span>
+      <img src="../images/Hezekiah/sp.png" alt="Student Profile System" class="project-image">
+      <h3>Student Profile System</h3>
+      <p>A simple system for managing student information, including their program, year level, and course.</p>
+    </div>
+    <a href="https://github.com/hzkiahm/Student-Profile.git" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+  </article>
+
+  <article class="project-card">
+    <div>
+      <div class="project-number">05</div>
+      <span>Desktop Application</span>
+      <img src="../images/Hezekiah/bank.png" alt="Bank Database" class="project-image">
+      <h3>Bank Database</h3>
+      <p>A database system designed to manage customer accounts, banking transactions, and account records.</p>
+    </div>
+    <a href="https://github.com/hzkiahm/Bank-DB.git" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+  </article>
+
+  <article class="project-card">
+    <div>
+      <div class="project-number">06</div>
+      <span>Desktop Application</span>
+      <img src="../images/Hezekiah/book.png" alt="Book Database" class="project-image">
+      <h3>Book Database</h3>
+      <p>A simple database system for organizing and managing book information, including titles, authors, categories, and other basic details.</p>
+    </div>
+    <a href="https://github.com/hzkiahm/Book-DB.git" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
+  </article>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact">
+    <div class="contact-content">
+      <p class="eyebrow">06 — get in touch</p>
+      <h2>Let's connect.</h2>
+      <p>Have a question, project idea, or simply want to say hello? Feel free to reach out.</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" autocomplete="name" required>
+            <span class="form-error" data-error-for="name"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="juan@example.com" autocomplete="email" required>
+            <span class="form-error" data-error-for="email"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Project inquiry, collaboration, etc." required>
+          <span class="form-error" data-error-for="subject"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
+          <span class="form-error" data-error-for="message"></span>
+        </div>
+
+        <button type="submit" class="cssbuttons-io" id="submitBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          <span>Send Message</span>
+        </button>
+
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span>Message sent successfully! I'll get back to you soon.</span>
+        </div>
+      </form>
+
+      <div class="contact-divider">
+        <span>or</span>
+      </div>
+      
+      <div class="contact-actions">
+              <a href="https://www.linkedin.com/in/hezekiah-magalona-7b833543b/"  class="cssbuttons-io"  target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span>Connect on LinkedIn</span>
+        </a>
+
+        <a href="https://www.facebook.com/hmgln"
+           class="cssbuttons-io" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em">
+            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.005 10.125 11.925v-8.431H7.078v-3.494h3.047V9.413c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.977h-1.514c-1.491 0-1.956.93-1.956 1.885v2.259h3.328l-.532 3.494h-2.796v8.431C19.612 23.078 24 18.092 24 12.073z"/>
+          </svg>
+          <span>Connect on Facebook</span>
+        </a>
+    
+      </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div><strong>Hezekiah Magalona<span>.</span></strong></div>
+    <p>Personal Portfolio • 2026</p>
+    <a href="../index.html">← Back to our team</a>
+  </footer>
+
+
+  <!-- ================= BACK TO TOP BUTTON ================= -->
+  <button class="back-to-top" aria-label="Back to top" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* ============ 0. LOADING SCREEN ============ */
+    (function () {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+
+      const startTime = Date.now();
+
+      window.addEventListener('load', function () {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, 2800 - elapsed);
+
+        setTimeout(function () {
+          loader.classList.add('loaded');
+          document.body.classList.add('loaded');
+
+          setTimeout(function () {
+            loader.style.display = 'none';
+          }, 900);
+        }, remaining);
+      });
+
+      setTimeout(function () {
+        if (!loader.classList.contains('loaded')) {
+          loader.classList.add('loaded');
+          document.body.classList.add('loaded');
+          setTimeout(function () {
+            loader.style.display = 'none';
+          }, 900);
+        }
+      }, 5000);
+    })();
+
+
+    /* ============ 1. CURSOR TRAIL (YELLOW COSMIC LINE) ============ */
+    (function () {
+      const canvas = document.getElementById('cursorTrail');
+      if (!canvas) return;
+
+      const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (!hasHover) {
+        canvas.style.display = 'none';
+        return;
+      }
+
+      const ctx = canvas.getContext('2d');
+      let width = 0;
+      let height = 0;
+      let dpr = window.devicePixelRatio || 1;
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.scale(dpr, dpr);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const trail = [];
+      const MAX_LENGTH = 30;
+      const FADE_SPEED = 0.03;
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let lastMouseX = 0;
+      let lastMouseY = 0;
+
+      document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        const dx = mouseX - lastMouseX;
+        const dy = mouseY - lastMouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist > 2) {
+          trail.push({
+            x: mouseX,
+            y: mouseY,
+            life: 1,
+            size: Math.min(6, 2 + dist * 0.15)
+          });
+
+          if (trail.length > MAX_LENGTH) {
+            trail.shift();
+          }
+
+          lastMouseX = mouseX;
+          lastMouseY = mouseY;
+        }
+      });
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = trail.length - 1; i >= 0; i--) {
+          const point = trail[i];
+          point.life -= FADE_SPEED;
+
+          if (point.life <= 0) {
+            trail.splice(i, 1);
+            continue;
+          }
+
+          const alpha = point.life;
+          const size = point.size * point.life;
+
+          /* 🌟 YELLOW trail colors */
+          const gradient = ctx.createRadialGradient(
+            point.x, point.y, 0,
+            point.x, point.y, size * 3
+          );
+          gradient.addColorStop(0, `rgba(255, 224, 74, ${alpha * 0.9})`);
+          gradient.addColorStop(0.4, `rgba(194, 168, 0, ${alpha * 0.5})`);
+          gradient.addColorStop(1, 'rgba(122, 106, 0, 0)');
+
+          ctx.beginPath();
+          ctx.fillStyle = gradient;
+          ctx.arc(point.x, point.y, size * 3, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.8})`;
+          ctx.arc(point.x, point.y, size * 0.6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        if (trail.length > 1) {
+          ctx.beginPath();
+          ctx.moveTo(trail[0].x, trail[0].y);
+
+          for (let i = 1; i < trail.length; i++) {
+            const p = trail[i];
+            const prev = trail[i - 1];
+            const midX = (p.x + prev.x) / 2;
+            const midY = (p.y + prev.y) / 2;
+            ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+          }
+
+          const last = trail[trail.length - 1];
+          const first = trail[0];
+          const lineGradient = ctx.createLinearGradient(
+            first.x, first.y, last.x, last.y
+          );
+          lineGradient.addColorStop(0, 'rgba(255, 224, 74, 0)');
+          lineGradient.addColorStop(0.5, 'rgba(255, 224, 74, 0.3)');
+          lineGradient.addColorStop(1, 'rgba(255, 224, 74, 0)');
+
+          ctx.strokeStyle = lineGradient;
+          ctx.lineWidth = 1.5;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    })();
+
+
+    /* ============ 2. NAVBAR AUTO-HIDE ============ */
+    (function () {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+
+      let lastScrollY = window.scrollY;
+      let isHoveringTop = false;
+      let ticking = false;
+      const SCROLL_THRESHOLD = 80;
+
+      document.addEventListener('mousemove', function (e) {
+        const isInTopZone = e.clientY < 100;
+        if (isInTopZone !== isHoveringTop) {
+          isHoveringTop = isInTopZone;
+          updateNavbar();
+        }
+      });
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateNavbar();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      function updateNavbar() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY < SCROLL_THRESHOLD) {
+          navbar.classList.remove('navbar-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (isHoveringTop) {
+          navbar.classList.remove('navbar-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (currentScrollY > lastScrollY) {
+          navbar.classList.add('navbar-hidden');
+        } else {
+          navbar.classList.remove('navbar-hidden');
+        }
+
+        lastScrollY = currentScrollY;
+      }
+    })();
+
+
+    /* ============ 3. SCROLL PROGRESS BAR ============ */
+    (function () {
+      const progressFill = document.querySelector('.scroll-progress-fill');
+      if (!progressFill) return;
+
+      let ticking = false;
+
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressFill.style.width = percent + '%';
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateProgress);
+          ticking = true;
+        }
+      });
+
+      updateProgress();
+    })();
+
+
+    /* ============ 4. ACTIVE SECTION HIGHLIGHT ============ */
+    (function () {
+      const navLinks = document.querySelectorAll('.navbar nav a[data-section]');
+      const sections = document.querySelectorAll('section[id]');
+      if (!navLinks.length || !sections.length) return;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(function (link) {
+              link.classList.toggle('active', link.dataset.section === id);
+            });
+          }
+        });
+      }, {
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+
+
+    /* ============ 5. BACK TO TOP BUTTON ============ */
+    (function () {
+      const btn = document.querySelector('.back-to-top');
+      if (!btn) return;
+
+      let ticking = false;
+
+      function toggleBtn() {
+        if (window.scrollY > 500) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(toggleBtn);
+          ticking = true;
+        }
+      });
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      toggleBtn();
+    })();
+
+
+    /* ============ 6. COPY TO CLIPBOARD ============ */
+    (function () {
+      const copyBtn = document.querySelector('.copy-link');
+      const notification = document.querySelector('.copy-notification');
+      if (!copyBtn || !notification) return;
+
+      let hideTimer;
+
+      copyBtn.addEventListener('click', function () {
+        const text = copyBtn.dataset.copy;
+
+        if (!text || text === '#') return;
+
+        navigator.clipboard.writeText(text).then(function () {
+          copyBtn.classList.add('copied');
+          notification.classList.add('show');
+
+          clearTimeout(hideTimer);
+          hideTimer = setTimeout(function () {
+            copyBtn.classList.remove('copied');
+            notification.classList.remove('show');
+          }, 2200);
+        }).catch(function (err) {
+          console.error('Copy failed:', err);
+        });
+      });
+    })();
+
+
+    /* ============ 7. ANIMATED STATS COUNTER ============ */
+    (function () {
+      const statsGrid = document.getElementById('statsGrid');
+      if (!statsGrid) return;
+
+      const statNumbers = statsGrid.querySelectorAll('.stat-number');
+      let started = false;
+
+      function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function update(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+
+          el.textContent = current + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = target + suffix;
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            statNumbers.forEach(function (el, index) {
+              setTimeout(function () {
+                animateCounter(el);
+              }, index * 150);
+            });
+            observer.disconnect();
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+
+      observer.observe(statsGrid);
+    })();
+
+
+    /* ============ 8. CONTACT FORM VALIDATION + FORMSPREE ============ */
+    (function () {
+      const form = document.getElementById('contactForm');
+      const successBox = document.getElementById('formSuccess');
+      const submitBtn = document.getElementById('submitBtn');
+      if (!form) return;
+
+      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/moevpzlg';
+
+      const validators = {
+        name: function (value) {
+          if (!value.trim()) return 'Please enter your name.';
+          if (value.trim().length < 2) return 'Name must be at least 2 characters.';
+          if (value.trim().length > 60) return 'Name is too long.';
+          if (!/^[a-zA-Z\s.'-]+$/.test(value.trim())) return 'Name contains invalid characters.';
+          return '';
+        },
+        email: function (value) {
+          if (!value.trim()) return 'Please enter your email.';
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+          if (!emailRegex.test(value.trim())) return 'Please enter a valid email address.';
+          return '';
+        },
+        subject: function (value) {
+          if (!value.trim()) return 'Please enter a subject.';
+          if (value.trim().length < 3) return 'Subject must be at least 3 characters.';
+          if (value.trim().length > 100) return 'Subject is too long.';
+          return '';
+        },
+        message: function (value) {
+          if (!value.trim()) return 'Please enter your message.';
+          if (value.trim().length < 10) return 'Message must be at least 10 characters.';
+          if (value.trim().length > 1000) return 'Message is too long (max 1000 characters).';
+          return '';
+        }
+      };
+
+      function getFieldWrapper(input) { return input.closest('.form-group'); }
+      function getErrorSpan(fieldName) {
+        return form.querySelector('[data-error-for="' + fieldName + '"]');
+      }
+
+      function showError(fieldName, message) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        const wrapper = getFieldWrapper(input);
+        const errorSpan = getErrorSpan(fieldName);
+        if (wrapper) wrapper.classList.add('has-error');
+        if (errorSpan) errorSpan.textContent = message;
+      }
+
+      function clearError(fieldName) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        const wrapper = getFieldWrapper(input);
+        const errorSpan = getErrorSpan(fieldName);
+        if (wrapper) wrapper.classList.remove('has-error');
+        if (errorSpan) errorSpan.textContent = '';
+      }
+
+      function validateField(fieldName) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        if (!input) return true;
+        const error = validators[fieldName](input.value);
+        if (error) {
+          showError(fieldName, error);
+          return false;
+        } else {
+          clearError(fieldName);
+          return true;
+        }
+      }
+
+      Object.keys(validators).forEach(function (fieldName) {
+        const input = form.querySelector('[name="' + fieldName + '"]');
+        if (!input) return;
+
+        input.addEventListener('blur', function () {
+          if (input.value.trim()) validateField(fieldName);
+        });
+
+        input.addEventListener('input', function () {
+          if (input.closest('.form-group').classList.contains('has-error')) {
+            validateField(fieldName);
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+        let firstInvalidField = null;
+
+        Object.keys(validators).forEach(function (fieldName) {
+          const fieldValid = validateField(fieldName);
+
+          if (!fieldValid && !firstInvalidField) {
+            firstInvalidField = form.querySelector('[name="' + fieldName + '"]');
+          }
+
+          if (!fieldValid) isValid = false;
+        });
+
+        if (!isValid) {
+          if (firstInvalidField) firstInvalidField.focus();
+          return;
+        }
+
+        submitBtn.disabled = true;
+
+        const originalText = submitBtn.querySelector('span').textContent;
+        submitBtn.querySelector('span').textContent = 'Sending...';
+
+        fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            subject: form.subject.value.trim(),
+            message: form.message.value.trim()
+          })
+        })
+        .then(function (response) {
+          if (response.ok) {
+            successBox.classList.add('show');
+            form.reset();
+            Object.keys(validators).forEach(clearError);
+
+            setTimeout(function () {
+              successBox.classList.remove('show');
+            }, 5000);
+          } else {
+            return response.json().then(function (data) {
+              const errorMsg = (data.errors && data.errors[0] && data.errors[0].message)
+                ? data.errors[0].message
+                : 'Something went wrong. Please try again.';
+
+              alert('Error: ' + errorMsg);
+            });
+          }
+        })
+        .catch(function (error) {
+          alert('Network error: ' + error.message + '\nPlease check your internet connection.');
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.querySelector('span').textContent = originalText;
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
